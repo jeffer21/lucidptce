@@ -1,0 +1,22 @@
+RewriteEngine On
+Options -Indexes
+
+RewriteBase /
+
+RewriteCond %{HTTP_HOST} ^pharmacytimes.org [NC]
+RewriteRule ^(.*)$ https://www.pharmacytimes.org/$1 [L,R=301]
+
+# Must be placed at the bottom of htaccess file before RewriteRule
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-l
+
+# lowercase
+RewriteCond %{REQUEST_URI} [A-Z]
+RewriteRule (.*) ${lc:$1} [R=301,L]
+
+# any redirects must be defined below
+
+RewriteRule ^([_A-Za-z0-9-:/\'\;\,\ \@]+)/?$ index.php?get=$1 [QSA,L,NC]
+
+

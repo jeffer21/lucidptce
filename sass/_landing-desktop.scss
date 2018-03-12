@@ -1,0 +1,229 @@
+#activity-page{
+	margin-top:300px;
+}
+#question-container{
+	margin-bottom:70px;
+}
+.activity-close{
+	position:absolute;
+	right:-8px;
+	top:-25px;
+	font-size: 2em;
+	line-height: 1em;
+	width:1em;
+	height:1em;
+	background-color:$white-opacity;
+	border-radius: 50%;
+	text-align: center;
+	cursor:pointer;
+
+}
+.activity-details{
+	width:70%;
+}
+.activity-close:hover{
+	background-color: $white;
+}
+.modal{
+	height:100vh;
+	width:100%;
+	position:fixed;
+	z-index:554545454;
+	background-color:rgba(0,0,0, .5);
+	top:0;
+}
+
+.modal-content {
+	background-color: $white;
+	position:fixed;
+	width:60%;
+	left:20%;
+	top: 50px;
+	border-top: 5px solid $light-blue;
+
+}
+.modal-header{
+	background-color: $lightest-blue;
+	display:flex;
+	padding:20px 0;
+
+}
+// Start Modal Popup
+
+.activity-start{
+	padding:10px;
+	margin: 0 auto;
+	color: $white;
+	background-color: $primary;
+}
+
+
+
+.blur{
+	filter:blur(5px);
+}
+.activity-information{
+	height:700px;
+	overflow: scroll;
+	overflow-x:hidden;
+	padding: 0 50px;
+	hr{
+		background-color:$primary !important;
+	}
+}
+.activity-details{
+	h5{
+		margin-bottom: 0;
+	}
+	p{
+		line-height: .5em;
+		font-size: .75em;
+	}
+}
+.activity-funded{
+	display: flex;
+	flex-direction:column;
+	margin:20px;
+	padding:0 20px;
+	background-color: $lightest-blue;
+	height:70px;
+	p{
+		font-size: .75em;
+		margin-bottom: .5em;
+	}
+	h5{
+		margin: 0;
+	}
+}
+.activity-ptce{
+	margin:40px 0;
+	img{
+		float:left;
+		width:40px;
+		margin-right:10px;
+	}
+	p{
+		font-size: .8em;
+	}
+}
+.faculty-containter{
+	margin:40px 0;
+	display: flex;
+	justify-content:space-around;
+}
+.activity-faculty{
+	width:50%;
+	text-align: center;
+	img{
+		margin-bottom: 10px;
+	}
+	p{
+
+	}
+}
+.system-requirements{
+	display: flex;
+	justify-content:space-around;
+}
+.windows, .mac{
+	img{
+		margin-right:20px;
+		height:54px;
+	}
+	display: flex;
+}
+.activity-bottom{
+	margin:60px 0 30px 0;
+	font-size:.8em;
+}
+.activity-overview{
+	margin:30px 0;
+}
+.activity-btn{
+	padding:15px 30px;
+	font-size: 1.5em;
+	border: 2px solid $primary;
+	border-radius: 5px;
+	color:$primary;
+	background-color: rgba(0, 0, 0, 0);
+}
+.activity-btn:hover{
+	color:$white;
+	background-color: $primary;
+}
+.activity-question{
+	margin:20px;
+
+}
+#question-form{
+	label{
+		padding:20px 50px;
+
+	}
+	input {
+
+	}
+	input:checked + label {
+    border: 3px solid $primary;
+    color:$primary;
+    border-radius: 5px;
+}
+}
+.activities-header{
+	h1{
+		color:$med-grey;
+	}
+}
+.question{
+	h2{
+		color:$med-grey;
+	}
+	h3{
+		margin-left: 40px;
+	}
+}
+input[type="radio"]{
+
+}
+#question-form{
+	input[type="number"]{
+		padding:10px;
+		font-size: 1em;
+		border-radius:5px;
+		border:.5px solid $lighter-grey;
+		background-color: $white;
+	}
+}
+
+#learning-progress-bar{
+	width:100%;
+	height:8px;
+	display:flex;
+	align-items:center;
+	background-color: $secondary;
+	border-radius: 0px;
+}
+#myBar{
+	position:relative;
+	top:0;
+	background-color: $primary;
+	height:5px;
+}
+	#progressText{
+		border: 5px solid $primary;
+		background-color: $body;
+		padding:5px 10px;
+		color:$primary;
+		border-radius: 20px;
+		font-weight: 500;
+		font-size: .8em;
+	}
+#myProgress{
+	display: flex;
+	align-items:center;
+
+}
+#question-form{
+	margin-left:60px;
+	font-size: 1.5em;
+}

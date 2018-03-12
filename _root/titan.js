@@ -18,6 +18,7 @@ $(document).ready(function(){
 
 
 // program ID required to start
+// display front-matter
 function activityPop(pid) {
     if (pid) {
         $.ajax({
@@ -26,16 +27,12 @@ function activityPop(pid) {
             type: "POST",
             cache: false,
             success: function(data){
-                var returnedObj = JSON.parse(data);
-
-                if (returnedObj.status) {
-                    console.log(returnedObj);
+                var ajaxObj = JSON.parse(data);
+                if (ajaxObj.ajaxStatus) {
+                    popUp(ajaxObj.returned[0].content);
                 } else {
-                    
+
                 }
-
-
-
             }
         });
     }
@@ -43,21 +40,31 @@ function activityPop(pid) {
 
 // popUp
 function popUp(html) {
-    $('body').append('<div id="contentPopDiv"><div id="contentPopBg"></div><div id="htmlPopContent"><div class="closeBtn"><div class="hamburgerLine"></div><div class="hamburgerLine"></div></div>' + html + '</div></div>');
-    $("#htmlPopContent").css("background-color", "white");
-    $("#htmlPopContent").css("left", "50%");
-    $("#htmlPopContent").css("margin-left", "-" + ($("#htmlPopContent").outerWidth() / 2) + "px");
-    $("#htmlPopContent").css("top", "50%");
-    $("#htmlPopContent").css("margin-top", "-" + ($("#htmlPopContent").outerHeight() / 2) + "px");
-    $("#htmlPopContent .popWrapper").css("max-height", ($("#htmlPopContent").height()) + "px");
-    $('.headShotBar').css("left", ($('#htmlPopContent').width()-$('#htmlPopContent .headShotBar').width())/2);
+    // makes blur other than popUp
+    $('body').addClass("activityBlurOn");
+
+    // append front-matter content to the page
+    $('body').append('<div id="htmlPopDiv"><div id="htmlPopBg"></div><div id="htmlPopWrapper"><div id="htmlPopCloseBtn"></div><div id="htmlPopMenuBar"><button class=\'btn activity-start\'>START ACTIVITY</button></div><div class="htmlPopContent">' + html + '</div></div></div>');
+
+    // position box
+    $("#htmlPopWrapper").css("background-color", "white");
+    $("#htmlPopWrapper").css("left", "50%");
+    $("#htmlPopWrapper").css("margin-left", "-" + ($("#htmlPopWrapper").outerWidth() / 2) + "px");
+    $("#htmlPopWrapper").css("top", "50%");
+    $("#htmlPopWrapper").css("margin-top", "-" + ($("#htmlPopWrapper").outerHeight() / 2) + "px");
+
+    // resize position box
     $(window).resize(function () {
-        $("#htmlPopContent").css("left", "50%");
-        $("#htmlPopContent").css("margin-left", "-" + ($("#htmlPopContent").outerWidth() / 2) + "px");
-        $("#htmlPopContent").css("margin-top", "-" + ($("#htmlPopContent").outerHeight() / 2) + "px");
-        $('.headShotBar').css("left", ($('#htmlPopContent').width()-$('#htmlPopContent .headShotBar').width())/2);
+        $("#htmlPopWrapper").css("left", "50%");
+        $("#htmlPopWrapper").css("margin-left", "-" + ($("#htmlPopWrapper").outerWidth() / 2) + "px");
+        $("#htmlPopWrapper").css("margin-top", "-" + ($("#htmlPopWrapper").outerHeight() / 2) + "px");
     });
-    $('#contentPopBg, .closeBtn').click(function () {
-        $('#contentPopDiv').remove();
+
+    // any actions
+    $('#htmlPopCloseBtn, #htmlPopMenuBar button').click(function () {
+        $('#htmlPopDiv').remove();
+        $('body').removeClass("activityBlurOn");
+        //window.location.href = rd;
     });
+
 }

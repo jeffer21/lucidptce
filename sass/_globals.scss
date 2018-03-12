@@ -1,0 +1,255 @@
+/* Global Start */
+select{
+	font-size: 1em;
+}
+.whitebg{
+	background-color: $white;
+}
+.btn{
+  border:0px;
+  border-radius: 5px;
+
+}
+a{
+	text-decoration: none;
+}
+a:visited{
+	color:$text;
+}
+body{
+  padding: 0;
+  margin:0;
+  background-color: $body;
+}
+.hidden{
+	position:fixed;
+	background-color: #000;
+	left:-100%;
+	display:none;
+}
+.indent-only{
+	list-style: none;
+}
+.display-flex{
+	display: flex;
+	justify-content:space-between;
+}
+.red{
+	color:$red;
+}
+.display-none{
+	display: none !important;
+}
+@media screen and (max-width:1064px){
+	
+.non-mobile{
+	display:none !important;
+}
+.mobile-search-container{
+	display:flex;
+
+}
+
+}
+@media screen and (min-width:1065px){
+.mobile{
+	display:none !important;
+}
+}
+
+.left{
+	width:80%;
+	margin-bottom:60px;
+}
+.right{
+	div{
+		width:50%;
+		padding:0 20px;
+	}
+	p{
+		font-weight:200;
+	}
+	h4{
+		color:$white !important;
+		font-weight: 300;
+		font-size: 1.5em;
+	}
+	h2{
+		font-weight: 200;
+		font-size: 2em;
+		i{
+			font-size: 1em !important;
+		}
+	}
+	width:100%;
+	background-color: $primary;
+	color:$white;
+	padding:30px;
+	margin-bottom:60px;
+}
+.dot{
+  height: 10px;
+  width: 10px;
+  background-color: $white;
+  border-radius: 50%;
+  display: inline-block;
+}
+.blue{
+	border:5px solid $primary;
+}
+.green{
+	border:5px solid $secondary;
+}
+// body {
+//   font-family: 'Roboto', sans-serif;
+//   font-size: 14px;
+//   margin: 0;
+//   padding: 0;
+//   background-color:#E8F1F2;
+// }
+// a {
+//   text-decoration: none;
+// }
+
+// /*Global End*/
+
+// /* Frame Start */
+
+// .condensedMenu {
+//   width: 100%;
+//   /*position: fixed;*/
+//   height: auto;
+//   background-color: #fff;
+//   z-index: 9999999;
+//   /*box-shadow: 0 5px 16px #999;*/
+//   border-bottom: solid 1px;
+//   padding-bottom: 5px;
+//   margin-bottom: 15px;
+// }
+
+// .mainLogo {
+//   float: left;
+//   padding: 15px;
+// }
+
+// .naviMenu {
+//   text-align: right;
+// }
+
+// .naviMenu ul {
+//   list-style: none;
+//   display: inline-flex;
+//   color: #123150;
+//   /*margin: auto;*/
+// }
+
+// .naviMenu a {
+//   color: #123150;
+// }
+
+// .naviMenu li {
+//   padding-right: 100px;
+//   font-size: 18px;
+//   font-weight: bold;
+// }
+
+// .naviMenu li a:hover {
+//   color: grey;
+//   border-bottom: solid black 2px;
+//   text-decoration: none;
+//   padding-bottom: 5px;
+// }
+
+// #menu2 .naviMenu li {
+//   padding-right: 100px;
+//   font-size: 18px;
+//   padding-top:  10px;
+//   /*font-weight: bold;*/
+// }
+
+// .currentLink {
+//   /*color: grey;*/
+//   border-bottom: solid black 2px;
+//   text-decoration: none;
+//   padding-bottom: 5px;
+// }
+
+// .pageContent {
+//   /*width: 1024px;*/
+//   margin: 25px auto 0 auto;
+// }
+
+// /*Footer Start*/
+// #footer {
+//   width: 100%;
+//   margin: auto;
+// }
+
+// .footerFloat {
+//   width: 100%;
+// }
+
+// @media all and (min-width: 950px) {
+//   #footer {
+//     width: 980px;
+//     margin: auto;
+//   }
+//   .footerFloat {
+//     width: 25%;
+//     float: left;
+//   }
+// }
+
+// #wrapper {
+//   width: 100%;
+//   overflow: hidden;
+//   margin-top:  25px;
+//   background-color:  #005A91;
+//   color:  white;
+// }
+
+// /*Footer End*/
+
+// /*Frame End*/
+
+// .container {
+//   display: flex;
+// }
+
+// .section {
+//   flex: 1; /*grow*/
+//   border: 1px solid;
+//   margin-right: 50px;
+//   margin-left: 50px;
+// }
+
+// @media (max-width: 768px) {
+//   /*breakpoint*/
+//   .container {
+//     flex-direction: column;
+//   }
+// }
+
+// .pointerTop {
+//   background-position: 50% 50%;
+//   background-repeat: no-repeat;
+//   z-index: 9999;
+//   width: 40px;
+//   height: 40px;
+//   position: fixed;
+//   right: 25px;
+//   cursor: pointer;
+//   transition: all .7s ease-in-out;
+//   overflow: hidden;
+//   box-sizing: border-box;
+//   font-weight: bold;
+//   font-size: 25px;
+//   color: #ffffff;
+//   line-height: 175%;
+//   text-indent: -99999px;
+//   background-color: gray;
+//   border-radius: 40px;
+//   background-image: url(https://mjhstudios.s3.amazonaws.com/media/core/topArrow.png);
+//   display: none;
+// }
+

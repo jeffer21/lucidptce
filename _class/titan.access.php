@@ -86,6 +86,7 @@ class access extends Titan {
         $this->recordLocation();
     }
 
+    // Keeps track of users access to different pages throughout the site
     private function recordLocation() {
         $url = $this->urlArray();
 
@@ -124,6 +125,7 @@ class access extends Titan {
 
     }
 
+    // Check if user is logged in to track different access
     public function loggedIn() {
         if($this->dID) {
             return true;
@@ -132,6 +134,7 @@ class access extends Titan {
         }
     }
 
+    // Login for Lucid
     public function login($email = null, $password = null) {
 
         if($this->isAuth()) {
@@ -161,42 +164,272 @@ class access extends Titan {
         }
     }
 
+    // Logout for lucid
     public function logout() {
         $this->killAuth();
         $this->redirect('/');
         die();
     }
 
-    public function trackAccess() {
+    //  Sent array or json of completed and uncompleted tracks for specific program.
+    //  Return type can either be 'array' or 'json'
+    public function trackAccess($returnType = 'array') {
         $url = $this->urlArray();
+        $p_id = $this->getPID($url);
+        $pObj = $this->getPInfo($p_id);
+        $accessArray = array();
+        $returnArray = array();
 
-        if(sizeof($url) > 3 && !$this->dID) {
+        // Keep record starting $url[2] which has program URL in it
+        if(sizeof($url) > 2 && $url[2] != '' && $this->ucID) {
+            // 1. Check if use has accessed this program before
+            $sql1 = 'SELECT * FROM t_userAccess WHERE ucID = "'.$this->ucID.'"';
+            $obj1 = $this->runQuery($sql1);
 
+            if($obj1->totalRow() < 1) {
+                // First access to track. Find first track available and return it
+                $track = $pObj->display('t_id',0);
+
+                $accessArray[$p_id]['track'][$track] = true;
+                $returnArray[$p_id][$track] = false;
+
+                $sql = 'INSERT INTO t_userAccess (ucID, uAccessArray) VALUES ("'.$this->ucID.'","'.serialize($accessArray).'")';
+                $this->runQuery($sql);
+            } else {
+                $userArray = $this->getUserArrays();
+                $uCompleteArray = $userArray->display('uCompleteArray')[$p_id]['track'];
+
+                //  2. Get size of program and confirm user completed all tracks
+                $tObj = $this->getPInfo($p_id,'t_id');
+                $pSize = $tObj->display('totalRow');
+
+                //  2a. If so create an array with all the tracks completed
+                if(sizeof($uCompleteArray) == $pSize) {
+                    foreach ($uCompleteArray as $track_id) {
+                        $returnArray[$p_id][$track_id] = true;
+                    }
+                } else {
+
+                //  2b. Create an initial array with the completed tracks
+                    foreach ($uCompleteArray as $track_id) {
+                        $returnArray[$p_id][$track_id] = true;
+                    }
+
+                //  2c. Then add the remaining tracks that have not been completed
+                    for($x=0; $x<$tObj->totalRow(); $x++) {
+                        if(!in_array($tObj->display('t_id',$x),$returnArray[$p_id])) {
+                            $returnArray[$p_id][$tObj->display('t_id',$x)] = false;
+                        }
+                    }
+                }
+            }
+
+            if($returnType == 'json') {
+                return json_encode($returnArray);
+            } else {
+                return $returnArray;
+            }
+
+        } elseif(!$this->ucID) {
+            $this->alert('Check for cookie. There is no cookie');
+            die();
+        }
+    }
+
+    //  Sent array or json of completed and uncompleted tracks for specific program.
+    //  Return type can either be 'array' or 'json'
+    public function moduleAccess($returnType = 'array',$t_id) {
+        $url = $this->urlArray();
+        $p_id = $this->getPID($url);
+        $tObj = $this->getPInfo($p_id, 'm_id', $t_id);
+        $accessArray = array();
+
+        // Keep record starting $url[2] which has program URL in it
+        if(sizeof($url) > 2 && $url[2] != '' && $this->ucID) {
+            // 1. Check if use has accessed this track before
+            $userArray = $this->getUserArrays();
+            $uAccessArray = $userArray->display('uAccessArray')[$p_id]['module'];
+
+
+            if(!in_array($t_id,$uAccessArray)) {
+                // First access to track. Create
+
+                $accessArray = $uAccessArray;
+                $accessArray[$p_id]['module'][$t_id] = true;
+                $returnArray[$t_id][$tObj->display('m_id',0)] = false;
+
+                $sql = 'UPDATE t_userAccess SET uAccessArray = "'.serialize($accessArray).'", updated = NOW() WHERE ucID = "'.$this->ucID.'"';
+                $this->runQuery($sql);
+            } else {
+                $uCompleteArray = $userArray->display('uCompleteArray')[$p_id]['module'][$t_id];
+
+                //  2. Get size of track and confirm user completed all modules
+                $tSize = $tObj->display('totalRow');
+
+                //  2a. If so create an array with all the tracks completed
+                if(sizeof($uCompleteArray) == $tSize) {
+                    foreach ($uCompleteArray as $module_id) {
+                        $returnArray[$t_id][$module_id] = true;
+                    }
+                } else {
+
+                    //  2b. Create an initial array with the completed tracks
+                    foreach ($uCompleteArray as $module_id) {
+                        $returnArray[$t_id][$module_id] = true;
+                    }
+
+                    //  2c. Then add the remaining tracks that have not been completed
+                    for($x=0; $x<$tObj->totalRow(); $x++) {
+                        if(!in_array($tObj->display('m_id',$x),$returnArray[$t_id])) {
+                            $returnArray[$t_id][$tObj->display('m_id',$x)] = false;
+                        }
+                    }
+                }
+            }
+
+            if($returnType == 'json') {
+                return json_encode($accessArray);
+            } else {
+                return $accessArray;
+            }
+
+        } elseif(!$this->ucID) {
+            $this->alert('Check for cookie. There is no cookie');
+            die();
+        }
+    }
+
+    //  Sent array or json of completed and uncompleted tracks for specific program.
+    //  Return type can either be 'array' or 'json'
+    public function contentAccess($returnType = 'array',$t_id) {
+        $url = $this->urlArray();
+        $p_id = $this->getPID($url);
+        $tObj = $this->getPInfo($p_id, 'm_id', $t_id);
+        $accessArray = array();
+
+        // Keep record starting $url[2] which has program URL in it
+        if(sizeof($url) > 2 && $url[2] != '' && $this->ucID) {
+            // 1. Check if use has accessed this track before
+            $userArray = $this->getUserArrays();
+            $uAccessArray = $userArray->display('uAccessArray')[$p_id]['module'];
+
+
+            if(!in_array($t_id,$uAccessArray)) {
+                // First access to track. Create
+
+                $accessArray = $uAccessArray;
+                $accessArray[$p_id]['module'][$t_id] = true;
+                $returnArray[$t_id][$tObj->display('m_id',0)] = false;
+
+                $sql = 'UPDATE t_userAccess SET uAccessArray = "'.serialize($accessArray).'", updated = NOW() WHERE ucID = "'.$this->ucID.'"';
+                $this->runQuery($sql);
+            } else {
+                $uCompleteArray = $userArray->display('uCompleteArray')[$p_id]['module'][$t_id];
+
+                //  2. Get size of track and confirm user completed all modules
+                $tSize = $tObj->display('totalRow');
+
+                //  2a. If so create an array with all the tracks completed
+                if(sizeof($uCompleteArray) == $tSize) {
+                    foreach ($uCompleteArray as $module_id) {
+                        $returnArray[$t_id][$module_id] = true;
+                    }
+                } else {
+
+                    //  2b. Create an initial array with the completed tracks
+                    foreach ($uCompleteArray as $module_id) {
+                        $returnArray[$t_id][$module_id] = true;
+                    }
+
+                    //  2c. Then add the remaining tracks that have not been completed
+                    for($x=0; $x<$tObj->totalRow(); $x++) {
+                        if(!in_array($tObj->display('m_id',$x),$returnArray[$t_id])) {
+                            $returnArray[$t_id][$tObj->display('m_id',$x)] = false;
+                        }
+                    }
+                }
+            }
+
+            if($returnType == 'json') {
+                return json_encode($accessArray);
+            } else {
+                return $accessArray;
+            }
+
+        } elseif(!$this->ucID) {
+            $this->alert('Check for cookie. There is no cookie');
+            die();
+        }
+    }
+
+    // Check user access to track - mainly if they finish a track
+    public function checkAccess() {
+
+    }
+
+    public function getPID($url) {
+        $sql = 'SELECT p_id FROM t_program p INNER JOIN t_program_type t ON p.pType_id = t.pType_id WHERE p.pURL = "'.$url[2].'" AND t.ptURL = "'.$url[1].'"';
+        $obj = $this->runQuery($sql,2);
+
+        return $obj->display('p_id');
+    }
+
+    public function getUserArrays() {
+        $sql = 'SELECT ua.uAccessArray, uc.uCompleteArray, us.uSubmissionArray, cookie.*
+                FROM t_userCookie cookie
+                INNER JOIN t_userAccess ua ON (cookie.ucID = ua.ucID)
+                INNER JOIN t_userComplete uc ON (cookie.ucID = uc.ucID)
+                INNER JOIN 	t_userSubmission us ON (cookie.ucID = us.ucID)
+                INNER JOIN t_program_type t ON p.pType_id = t.pType_id
+                WHERE cookie.ucID = "'.$this->ucID.'"';
+        $obj = $this->runQuery($sql,1);
+
+        return $obj;
+    }
+    
+    public function getPInfo($p_id, $groupBy = null, $t_id = null) {
+
+        if($groupBy == 't_id') {
+            $sqlOption = ' GROUP BY t_id ';
+        } else if($groupBy == 'm_id') {
+            $sqlOption = ' AND tt.t_id = "'.$t_id.'" GROUP BY m_id ';
+        } else {
+            $sqlOption  = '';
         }
 
+        $sql = 'SELECT *
+                FROM t_program tp
+                INNER JOIN t_track tt ON tp.p_id = tt.p_id
+                INNER JOIN t_module tm ON tt.t_id = tm.t_id
+                INNER JOIN t_content tc ON tm.m_id = tc.m_id
+                WHERE tp.p_id = "'.$p_id.'"'.$sqlOption.'
+                ORDER BY tt.tSort ASC, tm.mSort ASC, tc.cSort ASC, tc.cSubSort ASC';
+
+        $obj = $this->runQuery($sql);
+        return $obj;
     }
 
     public function testUArray() {
 
         // $accessArray[track_id][module_id] = true **Only equals true if user accessed it.
         $accessArray = array();
-        $accessArray['track1']['module1'] = true;
-        $accessArray['track1']['module2'] = true;
-        $accessArray['track1']['module3'] = true;
-        $accessArray['track1']['module4'] = true;
+        $accessArray['program1']['track1']['module1'] = true;
+        $accessArray['program1']['track1']['module2'] = true;
+        $accessArray['program1']['track1']['module3'] = true;
+        $accessArray['program1']['track1']['module4'] = true;
 
-        $accessArray['track2']['module1'] = true;
-        $accessArray['track2']['module2'] = true;
-        $accessArray['track2']['module3'] = true;
-        $accessArray['track2']['module4'] = true;
-        $accessArray['track2']['module5'] = true;
-        $accessArray['track2']['module6'] = true;
-        $accessArray['track2']['module7'] = true;
+        $accessArray['program1']['track2']['module1'] = true;
+        $accessArray['program1']['track2']['module2'] = true;
+        $accessArray['program1']['track2']['module3'] = true;
+        $accessArray['program1']['track2']['module4'] = true;
+        $accessArray['program1']['track2']['module5'] = true;
+        $accessArray['program1']['track2']['module6'] = true;
+        $accessArray['program1']['track2']['module7'] = true;
 
-        $accessArray['track3']['module1'] = true;
-        $accessArray['track3']['module2'] = true;
-        $accessArray['track3']['module3'] = true;
-        $accessArray['track3']['module4'] = true;
+        $accessArray['program1']['track3']['module1'] = true;
+        $accessArray['program1']['track3']['module2'] = true;
+        $accessArray['program1']['track3']['module3'] = true;
+        $accessArray['program1']['track3']['module4'] = true;
 
 
         // $uArray[track_id][module_id] = true **Only equals true if user completed it.
@@ -243,7 +476,7 @@ class access extends Titan {
         $submissionArray['track3']['module1']['question6'] = 'answer_id';
         $submissionArray['track3']['module1']['question7'] = 'answer_id';
 
-        print_r($submissionArray);die();
+        print_r($accessArray);die();
     }
 
 }

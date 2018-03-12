@@ -1,0 +1,256 @@
+@media screen and (max-width: 600px) {
+.dashboard{
+	width:100%;
+
+}
+.progress{
+	width:100%;
+
+}
+#myChart, #globalChart{
+	background-color:$white;
+	margin-bottom:20px;
+	width:100% !important;
+	height:100%;
+}
+#dashboard-saved-courses{
+
+}
+.dashboard-title{
+	font-family: 'Oswald', sans-serif;
+	font-size: 1.4em;
+	padding:10px 15px;
+	border-bottom:#ebebeb solid 2px;
+}
+.dashboard-saved-courses{
+	padding:0 20px;
+	
+}
+.dashboard-saved-courses-status{
+	display: flex;
+	justify-content:space-between;
+	font-size: .7em;
+	margin-bottom:10px;
+	.expiration-date{
+		color:$red;
+	}
+}
+.dashboard-recommended{
+	width:100%;
+}
+
+#dashboard-activities{
+	background-color: $white;
+}
+.dashboard-activities-card{
+	padding:0 20px;
+}
+.dashboard-activities-description{}
+.dashboard-activities-text{
+	h5{
+		margin-bottom:0;
+	}
+	p{
+		font-size: .8em;
+	}
+}
+.dashboard-activities-upc{
+	font-size: .75em;
+	margin-bottom:5px;
+}
+}
+
+
+@media screen and (min-width: 601px) and (max-width: 816px) {
+.dashboard{
+	width:70%;
+	float:left;
+}
+.progress{
+	width:100%;
+
+}
+#myChart, #globalChart{
+	background-color:$white;
+	margin-bottom:20px;
+	width:100% !important;
+	height:100%;
+}
+#dashboard-saved-courses{
+
+}
+.dashboard-title{
+	font-family: 'Oswald', sans-serif;
+	font-size: 1.4em;
+	padding:10px 15px;
+	border-bottom:#ebebeb solid 2px;
+}
+.dashboard-saved-courses{
+	padding:0 20px;
+	
+}
+.dashboard-saved-courses-status{
+	display: flex;
+	justify-content:space-between;
+	font-size: .7em;
+	margin-bottom:10px;
+	.expiration-date{
+		color:$red;
+	}
+}
+.dashboard-recommended{
+	width:100%;
+}
+
+#dashboard-activities{
+	background-color: $white;
+}
+.dashboard-activities-card{
+	padding:0 20px;
+}
+.dashboard-activities-description{}
+.dashboard-activities-text{
+	h5{
+		margin-bottom:0;
+	}
+	p{
+		font-size: .8em;
+	}
+}
+.dashboard-activities-upc{
+	font-size: .75em;
+	margin-bottom:5px;
+}
+}
+
+@media screen and (min-width: 817px) and (max-width:1064px) {
+.dashboard{
+	width:70%;
+	display:flex;
+	padding: 0 20px;
+	float:left;
+}
+.progress{
+	width:50%;
+
+}
+#myChart, #globalChart{
+	background-color:$white;
+	margin-bottom:20px;
+	width:100% !important;
+	height:100%;
+}
+#dashboard-saved-courses{
+
+}
+.dashboard-title{
+	font-family: 'Oswald', sans-serif;
+	font-size: 1.4em;
+	padding:10px 15px;
+	border-bottom:#ebebeb solid 2px;
+}
+.dashboard-saved-courses{
+	padding:0 20px;
+	
+}
+.dashboard-saved-courses-status{
+	display: flex;
+	justify-content:space-between;
+	font-size: .7em;
+	margin-bottom:10px;
+	.expiration-date{
+		color:$red;
+	}
+}
+.dashboard-recommended{
+	width:50%;
+	padding-left:10px;
+}
+
+#dashboard-activities{
+	background-color: $white;
+}
+.dashboard-activities-card{
+	padding:0 20px;
+}
+.dashboard-activities-description{}
+.dashboard-activities-text{
+	h5{
+		margin-bottom:0;
+	}
+	p{
+		font-size: .8em;
+	}
+}
+.dashboard-activities-upc{
+	font-size: .75em;
+	margin-bottom:5px;
+}
+
+
+
+
+
+}
+
+@media screen and (min-width:1065px) {
+.dashboard{
+	width:60%;
+	display:flex;
+	padding: 0 20px;
+}
+.progress{
+	width:50%;
+
+}
+#myChart, #globalChart{
+	background-color:$white;
+	margin-bottom:20px;
+}
+#dashboard-saved-courses{
+
+}
+.dashboard-title{
+	font-family: 'Oswald', sans-serif;
+	font-size: 1.4em;
+	padding:10px 15px;
+	border-bottom:#ebebeb solid 2px;
+}
+.dashboard-saved-courses{
+	padding:0 20px;
+	
+}
+.dashboard-saved-courses-status{
+	display: flex;
+	justify-content:space-between;
+	font-size: .7em;
+	margin-bottom:10px;
+	.expiration-date{
+		color:$red;
+	}
+}
+.dashboard-recommended{
+	width:50%;
+	padding-left:10px;
+}
+
+#dashboard-activities{
+	background-color: $white;
+}
+.dashboard-activities-card{
+	padding:0 20px;
+}
+.dashboard-activities-description{}
+.dashboard-activities-text{
+	h5{
+		margin-bottom:0;
+	}
+	p{
+		font-size: .8em;
+	}
+}
+.dashboard-activities-upc{
+	font-size: .75em;
+	margin-bottom:5px;
+}
+}

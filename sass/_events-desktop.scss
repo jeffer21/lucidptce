@@ -1,0 +1,119 @@
+@media screen and (min-width: 1061px){
+.main-content-2col{
+	background:$white;
+}
+#eventinfo{
+	h1{
+		margin:0;
+	}
+	p{
+		margin: 5px 0;
+	}
+}
+.twocolumn-container{
+	display:flex;
+
+
+}
+.event-column{
+	width: 100%;
+	padding-right:40px;
+}
+.event-information{
+	table{
+		margin:20px 0px;
+		tr{
+		}
+		td{
+			padding:5px 30px 0 0;
+			vertical-align:top;
+		}
+	}
+
+}
+.event-details{
+	h4{
+		color:$primary;
+		margin:0;
+	}
+	p{
+		margin: 15px 0 20px;
+		line-height: 1.5em;
+	}
+	img{
+		float:left;
+		margin: 15px 10px 0 0;
+	}
+	a{
+		color:$primary;
+		text-decoration: none;
+	}
+	a:hover{
+		text-decoration: underline;
+	}
+}
+.event-right-column{
+	width: 30%;
+	h5{
+		color:$primary;
+	}
+}
+.event-registration-title{
+	font-size: 1.3em;
+	color:$primary;
+}
+.event-registration-btn{
+	padding:10px 30px;
+	border-radius: 3px;
+	background-color: $light-blue;
+	color:$white;
+	font-family: 'Roboto';
+	font-size: 1.2em;
+	border:none;
+}
+.event-registration-btn:hover{
+	background-color:$primary;
+}
+.center-btn{
+	text-align: center;
+}
+}
+.text-box{
+	display: flex;
+	justify-content:space-between;
+	align-items:center;
+
+}
+.left-events{
+	width:50%;
+}
+.right-events{
+	margin-top:10px;
+	width:50%;
+	display:flex;
+	flex-direction:column;
+	align-items:center;
+
+	p{
+		font-family:'Roboto' !important;
+		margin-top:5px;
+		margin-bottom:0px;
+		font-size: .8em !important;
+	}
+	a{
+		font-size: .9em;
+		color:$white;
+	}
+}
+.eventbanner-btn{
+	padding:10px 30px;
+	background-color: rgba(0, 0, 0, 0);
+	border:1px solid $white;
+	border-radius: 5px;
+	color:$white;
+	font-size: 1.5em;
+}
+.eventbanner-btn:hover{
+	color:$primary;
+	background-color: $white;
+}

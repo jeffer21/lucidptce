@@ -11,6 +11,9 @@ class frame extends LucidFrame{
 
 //        $access->login('gcardona@mjhassoc.com','Newyork79');
 //        $access->logout();
+
+        $this->setVar('frameBanner', '');
+
     }
 
     public function pageMeta(){

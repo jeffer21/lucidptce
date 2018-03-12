@@ -33,15 +33,15 @@ class ajax extends Titan {
             case 'getProgram' :
 
                 $obj = new content();
-                $objTrack = $obj->getTrack($this->ajaxArg['p_id']);
+                $objProgram = $obj->getProgram($this->ajaxArg['p_id']);
 
-                if ($objTrack->totalRow()) {
+                if ($objProgram->totalRow()) {
 
-                    $this->returnArr['status'] = 1;
-                    $this->returnArr['content'] = $objTrack->getArray();
+                    $this->returnArr['ajaxStatus'] = 1;
+                    $this->returnArr['returned'] = $objProgram->getArray();
 
                 } else {
-                    $this->returnArr['status'] = 0;
+                    $this->returnArr['ajaxStatus'] = 0;
                 }
 
                 $this->returnArr['act'] = $this->act;

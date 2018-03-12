@@ -1,0 +1,13 @@
+.saved-courses{
+	padding:0 20px;
+	color:$text;
+}
+.saved-courses-status{
+	display: flex;
+	justify-content:space-between;
+	font-size: .7em;
+	margin-bottom:15px;
+	.expiration-date{
+		color:$red;
+	}
+}

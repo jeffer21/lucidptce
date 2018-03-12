@@ -1,0 +1,254 @@
+@media screen and (max-width: 600px){
+#global-nav {
+  position: fixed;
+  top: 0;
+  z-index: 9999;
+  width: 100%;
+  background: #324c5f;
+  color: #fff;
+  -webkit-transition: height .5s, height .5s; /* Safari */
+    transition: height .5s, height .5s;
+}
+
+nav{
+	display: flex;
+	justify-content:space-between;
+	width:90%;
+	align-items:center;
+	padding:10px 5% 0px;
+	background-color: $white;
+	-webkit-transition: all .5s;
+    transition: all .5s;
+}
+hr{
+	background-color:$light-border;
+	border:none;
+	height:2px;
+	margin:0;
+	-webkit-transition: all .5s;
+    transition: all .5s;
+}
+.mobile-nav{
+	display:flex;
+	align-items:center;
+
+
+}
+.mobile-menu{
+	margin-right: 10px;
+	i {
+		font-size:2em;
+		color:$text;
+	}
+}
+.logo{
+	img{
+		width:60%;
+		-webkit-transition: all .5s;
+	    transition: all .5s;
+	}
+}
+#mobile-menu{
+	position:fixed;
+	width:100%;
+	top:40px;
+	left:-100%;
+	-webkit-transition: all 1s;
+    transition: all 1s;
+    background-color:$lighter-grey;
+    height: 100vh;
+    overflow: scroll;
+
+}
+.nav-links-mobile{
+	display:flex;
+	align-items:center;
+	-webkit-transition: all .5s;
+    transition: all .5s;
+	ul{
+		display:inline;
+		-webkit-transition: all .5s;
+	    transition: all .5s;
+	    color:$text;
+		li{
+			float:left;
+			margin-left:0px;
+			list-style:none;
+			-webkit-transition: all .5s;
+		    transition: all .5s;
+		}
+	}
+	i {
+		color:$text;
+		font-size: 1.7em;
+	}
+}
+.nav-links{
+	display:none;
+}
+.search{
+	margin-left:40px;
+	padding:5px 10px;
+	border-radius:5px;
+	border:solid .5px $light-border;
+	-webkit-transition: all .5s;
+    transition: all .5s;
+
+}
+.mobile-search{
+	padding:5px 10px;
+	border-radius:5px;
+	border:solid .5px $light-border;
+
+}
+#mobile-search{
+	display:none;
+	-webkit-transition: all .5s;
+    transition: all 1.5s;
+    margin-left:40px;
+
+
+}
+.banner{
+	background-image:url('http://ptce.s3.amazonaws.com/_media/_image/full-banner.jpg');
+	background-position: center center;
+	height:150px;
+	-webkit-transition: all .5s;
+	transition: all .5s;
+	box-shadow:  0 4px 2px -2px $shadow;
+}
+.banner-text{
+	padding:20px;
+	margin-left:2%;
+	width:90%;
+	-webkit-transition: all .5s;
+	transition: all .5s;
+
+	h1{
+		color:$banner-h1;
+		padding:0;
+		margin:0;
+		font-size:1.4em;
+		font-weight:400;
+		-webkit-transition: all .5s;
+		transition: all .5s;
+	}
+	h2{
+		color:$banner-h2;
+		font-weight:300;
+		font-size:1.2em;
+		padding:0;
+		margin:0;
+		margin-bottom:5px;
+		-webkit-transition: all .5s;
+		transition: all .5s;
+	}
+	h3{
+		color:$banner-h3;
+		font-family:serif;
+		font-weight:normal;
+		padding:0;
+		margin:0;
+		font-size: 1em;
+		margin-bottom:0px;
+		-webkit-transition: all .5s;
+		transition: all .5s;
+	}
+	hr{
+		-webkit-transition: all .5s;
+		transition: all .5s;
+		background-color:$hr-line;
+		border:none;
+		height:3px;
+		width:30%;
+		float:left;
+	}
+	p{
+		-webkit-transition: all .5s;
+		transition: all .5s;
+		color:$banner-p;
+		font-family:serif;
+		font-size: .8em;
+		line-height: 1.2em;
+
+	}
+}
+
+
+
+.scrolled-nav{
+	nav{
+		display: flex;
+		justify-content:space-between;
+		width:90%;
+		align-items:center;
+		padding:10px 5% 0px;
+		background-color: $white;
+	}
+	hr{
+		background-color:$light-border;
+		border:none;
+		height:2px;
+		margin:0;
+	}
+	.logo{
+		img{
+			width:60%;
+		}
+	}
+
+
+	.banner{
+		background-image:url('http://ptce.s3.amazonaws.com/_media/_image/scroll-banner.jpg');
+		height:100px;
+		background-position: center center;
+		box-shadow:  0 4px 2px -2px $shadow;
+
+	}
+	.banner-text{
+		padding:10px 5px 0 0;
+		margin-left:10%;
+		width:80%;
+		h1{
+			color:$banner-h1;
+			padding:0;
+			margin:0;
+			font-size:1.0em;
+			font-weight:400;
+
+		}
+		h2{
+			color:$banner-h2;
+			font-weight:300;
+			font-size:.8em;
+			padding:0;
+			margin:0;
+			margin-bottom:5px;
+		}
+		h3{
+			color:$banner-h3;
+			font-family:serif;
+			font-weight:normal;
+			padding:0;
+			margin:0;
+			font-size: .6em;
+			margin-bottom:0px;
+		}
+		hr{
+			background-color:$hr-line;
+			border:none;
+			height:2px;
+			width:12%;
+			float:left;
+		}
+		p{
+			color:$banner-p;
+			font-family:serif;
+			font-size: .6em;
+			line-height: 1.2em;
+			margin-top: 15px;
+
+		}
+	}
+}
+}

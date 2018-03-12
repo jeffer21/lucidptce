@@ -1,0 +1,222 @@
+@media screen and (min-width: 1800px){
+#mobile-menu{
+	display:none;
+}
+#global-nav {
+  position: fixed;
+  top: 0;
+  z-index: 9999;
+  height: 150px;
+  width: 100%;
+  background: #324c5f;
+  color: #fff;
+  -webkit-transition: height .5s, height .5s; /* Safari */
+    transition: height .5s, height .5s;
+}
+
+nav{
+	display: flex;
+	justify-content:space-between;
+	width:90%;
+	align-items:center;
+	padding:10px 5% 0px;
+	background-color: $white;
+	-webkit-transition: all .5s;
+    transition: all .5s;
+}
+hr{
+	background-color:$light-border;
+	border:none;
+	height:2px;
+	margin:0;
+	-webkit-transition: all .5s;
+    transition: all .5s;
+}
+.logo{
+	img{
+		width:60%;
+		-webkit-transition: all .5s;
+	    transition: all .5s;
+	}
+}
+.nav-links{
+	display:flex;
+	align-items:center;
+	-webkit-transition: all .5s;
+    transition: all .5s;
+	ul{
+		display:inline;
+		-webkit-transition: all .5s;
+	    transition: all .5s;
+	    color:$text;
+		li{
+			float:left;
+			margin-left:40px;
+			list-style:none;
+			-webkit-transition: all .5s;
+		    transition: all .5s;
+		}
+	}
+}
+.search{
+	margin-left:40px;
+	padding:5px 10px;
+	border-radius:5px;
+	border:solid .5px $light-border;
+	-webkit-transition: all .5s;
+    transition: all .5s;
+
+}
+.banner{
+	background-image:url('http://ptce.s3.amazonaws.com/_media/_image/full-banner.jpg');
+	background-position: right bottom;
+	height:420px;
+	-webkit-transition: all .5s;
+	transition: all .5s;
+	box-shadow:  0 4px 2px -2px $shadow;
+}
+.banner-text{
+	padding:70px;
+	margin-left:15%;
+	width:40%;
+	-webkit-transition: all .5s;
+	transition: all .5s;
+
+	h1{
+		color:$banner-h1;
+		padding:0;
+		margin:0;
+		font-size:2.2em;
+		font-weight:400;
+		-webkit-transition: all .5s;
+		transition: all .5s;
+	}
+	h2{
+		color:$banner-h2;
+		font-weight:300;
+		font-size:2em;
+		padding:0;
+		margin:0;
+		margin-bottom:5px;
+		-webkit-transition: all .5s;
+		transition: all .5s;
+	}
+	h3{
+		color:$banner-h3;
+		font-family:serif;
+		font-weight:normal;
+		padding:0;
+		margin:0;
+		font-size: 1.8em;
+		margin-bottom:5px;
+		-webkit-transition: all .5s;
+		transition: all .5s;
+	}
+	hr{
+		-webkit-transition: all .5s;
+		transition: all .5s;
+		background-color:$hr-line;
+		border:none;
+		height:3px;
+		width:12%;
+		float:left;
+	}
+	p{
+		-webkit-transition: all .5s;
+		transition: all .5s;
+		color:$banner-p;
+		font-family:serif;
+		font-size: 1.5em;
+		line-height: 1.5em;
+
+	}
+}
+
+
+
+.scrolled-nav{
+nav{
+	display: flex;
+	justify-content:space-between;
+	width:90%;
+	align-items:center;
+	padding:10px 5% 0px;
+	background-color: $white;
+}
+hr{
+	background-color:$light-border;
+	border:none;
+	height:2px;
+	margin:0;
+}
+.logo{
+	img{
+		width:60%;
+	}
+}
+.nav-links{
+	display:flex;
+	align-items:center;
+	ul{
+		display:inline;
+		li{
+			float:left;
+			margin-left:40px;
+			list-style:none;
+			color:$text
+		}
+	}
+}
+
+.banner{
+	background-image:url('http://ptce.s3.amazonaws.com/_media/_image/scroll-banner.jpg');
+	height:200px;
+	box-shadow:  0 4px 2px -2px $shadow;
+
+}
+.banner-text{
+	padding:30px;
+	margin-left:15%;
+	width:60%;
+	h1{
+		color:$banner-h1;
+		padding:0;
+		margin:0;
+		font-size:1.8em;
+		font-weight:400;
+
+	}
+	h2{
+		color:$banner-h2;
+		font-weight:300;
+		font-size:1.6em;
+		padding:0;
+		margin:0;
+		margin-bottom:5px;
+	}
+	h3{
+		color:$banner-h3;
+		font-family:serif;
+		font-weight:normal;
+		padding:0;
+		margin:0;
+		font-size: 1.4em;
+		margin-bottom:5px;
+	}
+	hr{
+		background-color:$hr-line;
+		border:none;
+		height:2px;
+		width:12%;
+		float:left;
+	}
+	p{
+		color:$banner-p;
+		font-family:serif;
+		font-size: 1em;
+		line-height: 1.2em;
+
+	}
+}
+}
+}

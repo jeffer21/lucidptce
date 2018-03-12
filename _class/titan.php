@@ -84,7 +84,7 @@ class Titan extends Base {
         $url[5] = $obj->clean($this->get(5));
         $url[6] = $obj->clean($this->get(6));
 
-        return $url;
+        return array_filter($url);
     }
 
 

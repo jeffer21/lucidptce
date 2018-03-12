@@ -1,0 +1,176 @@
+@media screen and (min-width: 1800px){
+#page{
+	margin-top:500px;
+}
+.container{
+	width:90%;
+	display:flex;
+	justify-content:center;
+	margin: 0 auto;
+	margin-top: 20px; 
+}
+.left-column{
+	width:20%;
+}
+.left-column-title{
+	padding:10px 15px;
+	color: $column-title-text;
+	margin-bottom:20px;
+	border-bottom: $light-border solid 2px;
+
+}
+.section-box{
+	margin-bottom: 10px;
+	border: solid .5px $light-border;
+	background-color:$white;
+}
+#login{
+	padding-bottom:20px;
+	form{
+		width:100%;
+		
+		.input-username{
+			width:85%;
+			margin:0 5%;
+			padding:10px 2.5%;
+			border: $light-border solid .5px;
+			border-radius:5px 5px 0 0;
+		}
+		.input-password{
+			width:85%;
+			margin:0 5%;
+			padding: 10px 2.5%;
+			border: $light-border solid .5px;
+			border-radius:0 0 5px 5px;
+		}
+
+		.sign-in{
+			color: $white;
+			background-color: $primary;
+			width:45%;
+			margin-left:5%;
+			padding:10px 0;
+
+		}
+
+		.sign-up{
+			color: $white;
+			background-color: $secondary;
+			width:45%;			
+			padding:10px 0;
+
+		}
+	}
+	.forgot-pw{
+		text-align: right;
+		margin-right:5%;
+		a{
+			color:$primary;
+			text-decoration: none;
+			font-size: .75em;
+		}
+		a:hover{
+			color:$secondary;
+			text-decoration: underline;
+		}
+	}
+}
+.quicklinks{
+	ul{
+		list-style: none;
+		li{
+			margin-top:5px;
+		}
+		a {
+			color:$text;
+			text-decoration: none;
+		}
+		a:hover {
+			text-decoration: underline;
+		}
+	}
+}
+
+
+
+.main-body-title{
+	padding:10px 15px;
+	background-color: $column-title-bg;
+	color: $column-title-text;
+	margin-bottom:0px;
+}
+.activities-filter{
+	display:flex;
+	justify-content:space-between;
+	border: $light-border solid .5px;
+	padding: 4px 10px;
+	background-color:$white;
+}
+.sort{
+	padding:5px;
+	border-radius: 3px;
+	border: $light-border solid .5px;
+	color: $dark-grey;
+	background-color:$lighter-grey;
+}
+
+.sort-left{
+	width:60%;
+}
+.sort-right{
+	width:40%;
+	text-align: right;
+}
+
+.activities-card{
+	display:flex;
+	justify-content: space-between;
+	border:solid .5px $light-border;
+	margin-top: 10px;
+	background-color:$white;
+}
+
+.activities-img{
+	width:25%
+}
+
+.activities-img img{
+	width:100%
+}
+
+.activities-description{
+	margin-left:20px;
+	padding-right:30px;
+	display: flex;
+	flex-direction: column;
+	justify-content:space-between;
+	width:75%;
+
+}
+.activities-text{
+
+}
+.activities-upc{
+}
+
+
+
+
+
+.main-content{
+	width:60%;
+	padding:0 30px;
+}
+.right-column{
+	width:20%;
+	img{
+		width:100%;
+		margin-bottom:20px;
+	}
+}
+
+.main-content-2col {
+    width:80%;
+    padding:0 50px;
+}
+}

@@ -16,7 +16,21 @@
 
     <!-- css -->
     <link rel="stylesheet" type="text/css" media="screen, print" href="/css.css"/>
+    <link rel="stylesheet" type="text/css" media="screen, print" href="/titan.css"/>
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+    <!-- js -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script async src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <script src="nav.js"></script>
+    <script src="navMenu.js"></script>
+    <!-- css -->
+    <link rel="stylesheet" type="text/css" media="screen, print" href="style.css"/>
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Oswald:400" rel="stylesheet">
+    <!-- favicon -->
 
     <!-- favicon -->
     <link rel="shortcut icon" href="/_media/_image/favicon.ico" type="image/x-icon" />
@@ -24,91 +38,182 @@
 </head>
 <body>
 
-    <div id="menu2" class="condensedMenu">
+    <header id="global-nav" class="targetBlur">
+        <div id="mobile-menu" class="mobile">
+            <div id="quicklinks" class="section-box quicklinks">
+                <div class="mobile-menu-title">
+                    <div class="mobile-title">Menu</div>
+                    <div class="mobile-menu-close" onclick="mobileNav()">close</div>
+                </div>
+                <ul>
+                    <li><a href="pt/index.html">NEWS</a></li>
+                    <li><a href="#">CONTINUING EDUCATION</a></li>
+                    <li><a href="#">CONDITIONS</a></li>
+                </ul>
+            </div>
+            <div id="saved-courses" class="section-box quicklinks">
+                <div class="left-column-title">In Progress</div>
+                <div class="saved-courses">
+                    <h5>Identifying Health-System Pharmacist’s Role in Improving Pulmonary Arterial Hypertension and Transitions of Care</h5>
+                    <div class="saved-courses-status">
+                        <div class="progress-bar">
+                            <div class="progress-bar-40"></div>
+                        </div>
+                    </div>
+                    <div class="saved-courses-status">
+                        <span class="percent-completed">40% Completed</span>
+                        <span class="expiration-date">Expires April 25, 2018</span>
+                    </div>
+                    <hr>
+                </div>
+                <div class="saved-courses">
+                    <h5>Identifying Health-System Pharmacist’s Role in Improving Pulmonary Arterial Hypertension and Transitions of Care</h5>
+                    <div class="saved-courses-status">
+                        <div class="progress-bar">
+                            <div class="progress-bar-60"></div>
 
-        <div class="naviMenu">
-            <div class="mainLogo">
-                <img src="http://ptce.s3.amazonaws.com/_media/_image/PTCE%20Logo%20-%20APHA.png" alt=""/>
+                        </div>
+                    </div>
+                    <div class="saved-courses-status">
+                        <span class="percent-completed">60% Completed</span>
+                        <span class="expiration-date">Expires April 25, 2018</span>
+                    </div>
+                    <hr>
+                </div>
+                <div class="saved-courses">
+                    <h5>Identifying Health-System Pharmacist’s Role in Improving Pulmonary Arterial Hypertension and Transitions of Care</h5>
+                    <div class="saved-courses-status">
+                        <div class="progress-bar">
+                        </div>
+                    </div>
+                    <div class="saved-courses-status">
+                        <span class="percent-completed">0% Completed</span>
+                        <span class="expiration-date">Expires April 25, 2018</span>
+                    </div>
+                    <hr>
+                </div>
+                <div class="saved-courses">
+                    <h5>Identifying Health-System Pharmacist’s Role in Improving Pulmonary Arterial Hypertension and Transitions of Care</h5>
+                    <div class="saved-courses-status">
+                        <div class="progress-bar">
+                            <div class="progress-bar-10"></div>
+
+                        </div>
+                    </div>
+                    <div class="saved-courses-status">
+                        <span class="percent-completed">10% Completed</span>
+                        <span class="expiration-date">Expires April 25, 2018</span>
+                    </div>
+                    <hr>
+                </div>
+            </div>
+            <div id="quicklinks" class="section-box quicklinks">
+                <div class="left-column-title">Quick Links</div>
+                <ul>
+                    <li><a href="#">Videos</a></li>
+                    <li><a href="#">Clinical Resources</a></li>
+                    <li><a href="#">Conference Coverage</a></li>
+                    <li><a href="#">Contributors</a></li>
+                </ul>
             </div>
 
-            <ul>
-                <li><a href="/">News</a></li>
-                <li><a href="/education">Education</a></li>
-                <li><a href="/conditions">Conditions</a></li>
-                <li id="search-button" style="list-style: none; float: right">
-                    <form id="search">
-                        <input type="search" placeholder="Search" style="text-align: right">
-                    </form>
-                </li>
-            </ul>
+            <div id="topics" class="section-box quicklinks">
+                <div class="left-column-title">Topic</div>
+                <ul>
+                    <li><a href="#">Allergies</a></li>
+                    <li><a href="#">Anaphylaxis</a></li>
+                    <li><a href="#">Asthma</a></li>
+                    <li><a href="#">Blood Disorders</a></li>
+                    <li><a href="#">Cardiology</a></li>
+                    <li><a href="#">Cold and Flu</a></li>
+                    <li><a href="#">COPD</a></li>
+                    <li><a href="#">Dermatology</a></li>
+                    <li><a href="#">Diabetes</a></li>
+                    <li><a href="#">Depression</a></li>
+                </ul>
+            </div>
         </div>
-    </div>
+        <nav>
+            <div class="mobile-nav mobile">
+                <div class="mobile-menu" onclick="mobileNav()">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <div class="logo"><a href="/"><img src="http://ptce.s3.amazonaws.com/_media/_image/ptce-logo.png" alt=""></a></div>
+            </div>
+            <div class="logo non-mobile"><a href="/"><img src="http://ptce.s3.amazonaws.com/_media/_image/ptce-logo.png" alt=""></a></div>
+            <div class="mobile-search-container">
+                <div class="nav-links-mobile mobile" onclick="mobileSearch()">
+                    <i class="fas fa-search"></i>
+                </div>
+                <div id="mobile-search" class="mobile">
+                    <input class="mobile-search" type="text" placeholder="Search">
+                </div>
+            </div>
+            <div class="nav-links non-mobile">
+                <ul>
+                    <li><a href="pt/index.html">NEWS</a></li>
+                    <li>CONTINUING EDUCATION</li>
+                    <li>CONDITIONS</li>
+                </ul>
+                <input class="search" type="text" placeholder="Search">
+            </div>
+        </nav>
+        <hr>
+        <div id="mobile-menu-container"></div>
+        $frameBanner$
+    </header>
 
-    <!--<img style="width: 100%; height: 219px" src="http://ptce.s3.amazonaws.com/_media/_image/728x90.jpg"/>-->
-
-    <div class="pageContent">
-        <!--<header style="margin: auto;text-align: center">
-            <h1>3 Column Responsive Layout</h1>
-            <h1>$body$</h1>
-        </header>-->
+    <div class="pageContent targetBlur">
         $_page$
     </div>
 
-    <div id="wrapper">
-        <div id="footer">
-            <div class="footerFloat">
-                <h4>Header 1</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            </div>
-            <div class="footerFloat">
-                <h4>Header 2</h4>
+    <footer class="targetBlur">
+        <div class="footer-content">
+            <div class="footer-logo"><img src="http://ptce.s3.amazonaws.com/_media/_image/ptce-logo.png" alt=""></div>
+            <div class="learn-more-footer">
+                <div class="footer-title"><p>Learn More</p></div>
                 <ul>
-                    <li>Line 1</li>
-                    <li>Line 2</li>
-                    <li>Line 3</li>
-                    <li>Line 4</li>
+                    <li><a href="">About Us</a></li>
+                    <li><a href="">Contact Us</a></li>
+                    <li><a href="">Careers</a></li>
+                    <li><a href="">Frequently Asked Questions</a></li>
+                    <li><a href="">Strategic Alliance Partnerships</a></li>
+                    <li><a href="">CE News</a></li>
                 </ul>
             </div>
-            <div class="footerFloat">
-                <h4>Header 3</h4>
+            <div class="publication-footer">
+                <div class="footer-title"><p>Publications</p></div>
                 <ul>
-                    <li>Line 1</li>
-                    <li>Line 2</li>
-                    <li>Line 3</li>
-                    <li>Line 4</li>
+                    <li><a href="">MJH Associates</a></li>
+                    <li><a href="">American Journal of Managed</a></li>
+                    <li><a href="">Care</a></li>
+                    <li><a href="">Cure</a></li>
+                    <li><a href="">MD Magazine</a></li>
+                    <li><a href="">ONCLive</a></li>
+                    <li><a href="">OTCGuide</a></li>
+                    <li><a href="">Pharmacy Times</a></li>
+                    <li><a href="">Specialty Pharmacy Times</a></li>
                 </ul>
             </div>
-            <div class="footerFloat">
-                <h4>Header 4</h4>
-                <p>
-                    Pharmacy Times Continuing Education<br>
-                    2 Clarke Drive | Suite 100 | Cranbury, NJ 08512<br>
-                    1-800-597-6372
-                </p>
+            <div class="social-media-footer">
+                <div class="social-media">
+                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-linkedin"></i>
+                    <i class="fab fa-youtube"></i>
+                </div>
+                <div class="footer-address">
+                    <p>Pharmacy Times Continuing Education</p>
+                    <p>2 Clarke Drive | Suite 100 | Cranbury, NJ 08512</p>
+                    <p>1-800-597-6372</p>
+                </div>
             </div>
         </div>
-    </div>
-
-    <!--<div class="footerShell">-->
-        <!--<div class="footerDiv">-->
-            <!--<div id="footerLogo">-->
-                <!--<img src="http://ptce.s3.amazonaws.com/_media/_image/PTCE%20Logo%20-%20APHA.png" alt=""/>-->
-            <!--</div>-->
-            <!--<div id="2col">-->
-                <!--<div>Testing</div>-->
-                <!--<div>Testing</div>-->
-            <!--</div>-->
-            <!--<div id="socialContact">-->
-                <!--<p>Facebook | LinkedIn | Youtube</p>-->
-                <!--<p>-->
-                    <!--Pharmacy Times Continuing Education<br>-->
-                    <!--2 Clarke Drive | Suite 100 | Cranbury, NJ 08512<br>-->
-                    <!--1-800-597-6372-->
-                <!--</p>-->
-            <!--</div>-->
-        <!--</div>-->
-        <!--<div id="copyright">stuff</div>-->
-    <!--</div>-->
+        <div class="footer-copyright">
+            <p>Privacy Policy | Terms & Conditions | Educational Disclaimer | Activity Disclaimer | Feedback</p>
+            <p>© Pharmacy Times Continuing Education 2017 Intellisphere, LLC. All Rights Reserved</p>
+        </div>
+    </footer>
 
 </body>
 </html>

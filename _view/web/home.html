@@ -1,91 +1,152 @@
-<div class="container">
+<div id="page" class="container targetBlur">
 
-    <div class="section">
-        <div id="login">
-            <div style="background-color: #005A91; color: white; border: #707070;">Login/Sign Up</div>
+    <div class="left-column">
+        <div id="login" class="section-box">
+            <div class="left-column-title">Login/Sign Up</div>
             <form>
-                <input type="text" name="username" placeholder="Username"><br>
-                <input type="text" name="password" placeholder="Password"><br>
-                <div style="font-size: 5px">forgot password?</div> <br>
+                <input class ="input-username" type="text" name="username" placeholder="Username"><br>
+                <input class ="input-password" type="text" name="password" placeholder="Password"><br>
+                <div class="forgot-pw"><a href="#">forgot password?</a></div> <br>
 
-                <input type="submit" value="Sign In" style="background-color: #005A91; color: white; text-align: center">
-                <button style="background-color: #005A91; color: white; text-align: center">Sign Up</button>
+                <input class="sign-in btn" type="submit" value="Sign In">
+                <button class="sign-up btn">Sign Up</button>
             </form>
         </div><br>
 
-        <div id="quicklinks">
-            <div style="background-color: #005A91; color: white; border: #707070;">Quick Links</div>
-            <ul style="list-style: none;margin: auto">
-                <li>Videos</li>
-                <li>Clinical Resources</li>
-                <li>Conference Coverage</li>
-                <li>Publications</li>
-                <li>Contributors</li>
+        <div id="quicklinks" class="section-box quicklinks">
+            <div class="left-column-title">Quick Links</div>
+            <ul>
+                <li><a href="#">Videos</a></li>
+                <li><a href="#">Clinical Resources</a></li>
+                <li><a href="#">Conference Coverage</a></li>
+                <li><a href="#">Contributors</a></li>
             </ul>
         </div><br>
 
-        <div id="topics">
-            <div style="background-color: #005A91; color: white; border: #707070;">Topic</div>
-            <ul style="list-style: none;margin: auto">
-                <li>Allergies</li>
-                <li>Anaphylaxis</li>
-                <li>Asthma</li>
-                <li>Blood Disorders</li>
-                <li>Cardiology</li>
-                <li>Cold and Flu</li>
-                <li>COPD</li>
-                <li>Dermatology</li>
-                <li>Diabetes</li>
-                <li>Depression</li>
+        <div id="topics" class="section-box quicklinks">
+            <div class="left-column-title">Topic</div>
+            <ul>
+                <li><a href="#">Allergies</a></li>
+                <li><a href="#">Anaphylaxis</a></li>
+                <li><a href="#">Asthma</a></li>
+                <li><a href="#">Blood Disorders</a></li>
+                <li><a href="#">Cardiology</a></li>
+                <li><a href="#">Cold and Flu</a></li>
+                <li><a href="#">COPD</a></li>
+                <li><a href="#">Dermatology</a></li>
+                <li><a href="#">Diabetes</a></li>
+                <li><a href="#">Depression</a></li>
             </ul>
         </div>
 
     </div>
-    <div class="section" style="flex-basis: 50%">
+    <div class="main-content">
         <div id="activities">
-            <div style="background-color: #005A91; color: white; border: #707070;">Activities</div>
-            <div> HOLDS FILTERS!! ARTICLES GO UNDER!</div> <br>
+            <div class="main-body-title">Activities</div>
+            <div class="activities-filter">
+                <div class="sort-left">
+                    <select name="Profession" id="" class="sort">
+                        <option value="">All Professions</option>
+                        <option value="">Retail Pharmacist</option>
+                        <option value="">Specialty Pharmacist</option>
+                        <option value="">Health-System Pharmacist</option>
+                        <option value="">Managed Care Pharmacist</option>
+                        <option value="">Pharmacy Technician</option>
+                    </select>
+                    <select name="Topic" id="" class="sort">
+                        <option value="">Topic</option>
+                        <option value="">Allergies</option>
+                        <option value="">Blood Disorder</option>
+                        <option value="">COPD</option>
+                        <option value="">Depression</option>
+                        <option value="">Eye Care</option>
+                        <option value="">Home Study</option>
+                        <option value="">Law</option>
+                        <option value="">Neurology</option>
+                        <option value="">Oncology</option>
+                        <option value="">Over-the-Counter</option>
+                        <option value="">Rare Diseases</option>
+                    </select>
+                    <select name="Type" id="" class="sort">
+                        <option value="">Type</option>
+                        <option value="">Enduring</option>
+                        <option value="">Webinars</option>
+                        <option value="">Live Webinars</option>
+                    </select>
+                </div>
+                <div class="sort-right">
+                    <span>Sort by:</span>
+                    <select name="" id="" class="sort">
+                        <option value="">Popularity</option>
+                        <option value="">Trending</option>
+                        <option value="">Expiring Soon</option>
+                        <option value="">Newest</option>
+                    </select>
+                </div>
+            </div>
 
-            <div class="articles">
-                <div style="float: left">
-                    <img src="http://ptce.s3.amazonaws.com/_media/_image/CHPC_slider_300.png">
+            <div class="activities-card">
+                <div class="activities-img">
+                    <img src="http://ptce.s3.amazonaws.com/_media/_image/Intersection-1.png">
                 </div>
-                <div>
-                    <h1>Test Articles</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eleifend, nisl nec pulvinar consequat, neque tortor commodo libero, a finibus massa tellus ac erat. Ut sed iaculis velit. Cras ultricies risus id mauris facilisis, vitae tempus quam convallis. Phasellus sagittis venenatis tortor, at viverra mi gravida sit amet. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque dignissim eu neque eu pretium. Donec sit amet risus elementum, lobortis massa at, luctus justo. Vestibulum in urna vehicula, tempus nunc et, viverra nibh.</p>
-                    <p style="float: right;font-size: 8px">Expires: Sep 6,2018 | Credits: 1.00 | UAN: 0290-000-17-133-H01-P</p>
+                <div class ="activities-description">
+                    <div class="activities-text">
+                        <h3>Understanding the Clinical and Economic Data of Botulinum Toxin in Chronic Migraines</h3>
+                        <p>Examine evidence-based strategies to help patients with migraine, and demonstrate onabotulinumtoxin. A injection's potential benefits and appropriate use in patients with chronic migraine. Identify collaborative management plans with prescribers who wish to use onabotulinumtoxinA, emphasizing patient education.</p>
+                    </div>
+                    <div class="activities-upc">
+                        <p>Expires: Sep 6,2018 | Credits: 1.00 | UAN: 0290-000-17-133-H01-P</p>
+                    </div>
                 </div>
+            </div>
+            <div class="activities-card">
+                <div class="activities-img">
+                    <img src="http://ptce.s3.amazonaws.com/_media/_image/Intersection-9.png">
+                </div>
+                <div class ="activities-description">
+                    <div class="activities-text">
+                        <h3>The Expanding Health Benefits of Prebiotics and Probiotics</h3>
+                        <p>LAs our understanding of the complex relationship between the gut microbiota and human health evolves, the number of potential uses for probiotics grows. In order to help patients decide if a probiotic will be beneficial, pharmacists need to know the evidence supporting the use of probiotics for a plethora of indications. They must also provide advice on choosing products, including how to avoid quality issues such as contamination, sub-potency, and stability. This activity will provide pharmacists with an approach to evaluating these issues.</p>
+                    </div>
+                    <div class="activities-upc">
+                        <p>Expires: Sep 6,2018 | Credits: 1.00 | UAN: 0290-000-17-133-H01-P</p>
+                    </div>
+                </div>
+            </div>
+            <div class="activities-card">
+                <div class="activities-img">
+                    <img src="http://ptce.s3.amazonaws.com/_media/_image/Intersection-1.png">
+                </div>
+                <div class ="activities-description">
+                    <div class="activities-text">
+                        <h3>Test Articles</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eleifend, nisl nec pulvinar consequat, neque tortor commodo libero, a finibus massa tellus ac erat. Ut sed iaculis velit. Cras ultricies risus id mauris facilisis, vitae tempus quam convallis. Phasellus sagittis venenatis tortor, at viverra mi gravida sit amet. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque dignissim eu neque eu pretium. Donec sit amet risus elementum, lobortis massa at, luctus justo. Vestibulum in urna vehicula, tempus nunc et, viverra ibh.</p>
+                    </div>
+                    <div class="activities-upc">
+                        <p>Expires: Sep 6,2018 | Credits: 1.00 | UAN: 0290-000-17-133-H01-P</p>
+                    </div>
+                </div>
+            </div>
+            <div class="activities-card">
+                <div class="activities-img">
+                    <img src="http://ptce.s3.amazonaws.com/_media/_image/Intersection-9.png">
+                </div>
+                <div class ="activities-description">
+                    <div class="activities-text">
+                        <h3>Test Articles</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eleifend, nisl nec pulvinar consequat, neque tortor commodo libero, a finibus massa tellus ac erat. Ut sed iaculis velit. Cras ultricies risus id mauris facilisis, vitae tempus quam convallis. Phasellus sagittis venenatis tortor, at viverra mi gravida sit amet. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque dignissim eu neque eu pretium. Donec sit amet risus elementum, lobortis massa at, luctus justo. Vestibulum in urna vehicula, tempus nunc et, viverra nibh.</p>
+                    </div>
+                    <div class="activities-upc">
+                        <p>Expires: Sep 6,2018 | Credits: 1.00 | UAN: 0290-000-17-133-H01-P</p>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-            </div><br>
-            <div class="articles">
-                <div style="float: left">
-                    <img src="http://ptce.s3.amazonaws.com/_media/_image/CHPC_slider_300.png">
-                </div>
-                <div>
-                    <h1>Test Articles</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eleifend, nisl nec pulvinar consequat, neque tortor commodo libero, a finibus massa tellus ac erat. Ut sed iaculis velit. Cras ultricies risus id mauris facilisis, vitae tempus quam convallis. Phasellus sagittis venenatis tortor, at viverra mi gravida sit amet. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque dignissim eu neque eu pretium. Donec sit amet risus elementum, lobortis massa at, luctus justo. Vestibulum in urna vehicula, tempus nunc et, viverra nibh.</p>
-                    <p style="float: right;font-size: 8px">Expires: Sep 6,2018 | Credits: 1.00 | UAN: 0290-000-17-133-H01-P</p>
-                </div>
-
-            </div><br>
-            <div class="articles">
-                <div style="float: left">
-                    <img src="http://ptce.s3.amazonaws.com/_media/_image/CHPC_slider_300.png">
-                </div>
-                <div>
-                    <h1>Test Articles</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eleifend, nisl nec pulvinar consequat, neque tortor commodo libero, a finibus massa tellus ac erat. Ut sed iaculis velit. Cras ultricies risus id mauris facilisis, vitae tempus quam convallis. Phasellus sagittis venenatis tortor, at viverra mi gravida sit amet. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque dignissim eu neque eu pretium. Donec sit amet risus elementum, lobortis massa at, luctus justo. Vestibulum in urna vehicula, tempus nunc et, viverra nibh.</p>
-                    <p style="float: right;font-size: 8px">Expires: Sep 6,2018 | Credits: 1.00 | UAN: 0290-000-17-133-H01-P</p>
-                </div>
-
-            </div><br>
-
-        </div><br>
     </div>
-    <div class="section">
-        <div>ADs go here</div><br>
-        <div>ADs go here</div>
+    <div class="right-column">
+        <img src="http://ptce.s3.amazonaws.com/_media/_image/webinar-link.png" alt="">
+        <img src="http://ptce.s3.amazonaws.com/_media/_image/webinar-link1.png" alt="">
+        <img src="http://ptce.s3.amazonaws.com/_media/_image/webinar-link2.png" alt="">
     </div>
-
-
 </div>

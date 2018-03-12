@@ -1,0 +1,14 @@
+/*!
+Theme Name: PTCE
+Description: PTCE Redesign
+Version: 1.0
+Author: Jefferson Lee
+Author URI: http://www.watch-learn.com/
+Tags: starter theme, light, sass, gulp, livereload
+
+        The CSS, XHTML is released under GPL:
+        http://www.opensource.org/licenses/gpl-license.php
+
+*/h1{color:blue}body{font-family:'Roboto', sans-serif;font-size:14px;margin:0;padding:0;background-color:#E8F1F2}a{text-decoration:none}.condensedMenu{width:100%;height:auto;background-color:#fff;z-index:9999999;border-bottom:solid 1px;padding-bottom:5px;margin-bottom:15px}.mainLogo{float:left;padding:15px}.naviMenu{text-align:right}.naviMenu ul{list-style:none;display:-ms-inline-flexbox;display:inline-flex;color:#123150}.naviMenu a{color:#123150}.naviMenu li{padding-right:100px;font-size:18px;font-weight:bold}.naviMenu li a:hover{color:grey;border-bottom:solid black 2px;text-decoration:none;padding-bottom:5px}#menu2 .naviMenu li{padding-right:100px;font-size:18px;padding-top:10px}.currentLink{border-bottom:solid black 2px;text-decoration:none;padding-bottom:5px}.pageContent{margin:25px auto 0 auto}#footer{width:100%;margin:auto}.footerFloat{width:100%}@media all and (min-width: 950px){#footer{width:980px;margin:auto}.footerFloat{width:25%;float:left}}#wrapper{width:100%;overflow:hidden;margin-top:25px;background-color:#005A91;color:white}.container{display:-ms-flexbox;display:flex}.section{-ms-flex:1;flex:1;border:1px solid;margin-right:50px;margin-left:50px}@media (max-width: 768px){.container{-ms-flex-direction:column;flex-direction:column}}
+
+/*# sourceMappingURL=style.css.map */
